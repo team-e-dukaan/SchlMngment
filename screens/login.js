@@ -1,30 +1,13 @@
-// import { StyleSheet, View, Text } from 'react-native';
-// import {globalStyles} from '../styles/global';
-// import React from 'react';
-
-// export default function About() {
-//   return (
-//     <View style={globalStyles.container}>
-//       <Text>About Screen</Text>
-//     </View>
-//   );
-// }
 import React,{useState} from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, ActivityIndicator, FlatList, Alert, Platform, AppRegistry } from 'react-native';
 // import AsyncStorage from '@react-native-community/async-storage';
 import { createStackNavigator } from 'react-navigation-stack';
-export function About() {}
+export  function Login({navigation}) {}
 export default  class App extends React.Component {
-   pressHandler = () => {
-    //navigation.navigate('ReviewDetails');
-    const {navigate}=this.props.navigation;
-    navigation.push('Login');
-  }
   state = {
     email: '',
     otp: ""
   }
-  
   getDataUsingGet() {
     var emailId = this.state.email
     var url = "http://ec2-52-12-91-65.us-west-2.compute.amazonaws.com:8080/swrmsdc/authentication/sendOTP?emailId=";
@@ -57,52 +40,13 @@ export default  class App extends React.Component {
 
     // verifyOTP
   }
-  getDataUsingPost() {
-    //POST json 
-    var dataToSend = {
-      "email": "eve.holt@reqres.in",
-      "password": "cityslicka"
-    };
-    //making data to send on server
-    var formBody = [];
-    for (var key in dataToSend) {
-      var encodedKey = encodeURIComponent(key);
-      var encodedValue = encodeURIComponent(dataToSend[key]);
-      formBody.push(encodedKey + "=" + encodedValue);
-    }
-    formBody = formBody.join("&");
-    //POST request 
-    fetch('https://reqres.in/api/login', {
-      method: "POST",//Request Type 
-      body: formBody,//post body 
-      headers: {//Header Defination 
-        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-      },
-    })
-      .then((response) => response.json())
-      //If response is in json then in success
-      .then((responseJson) => {
-
-        alert(JSON.stringify(responseJson));
-        // console.log(responseJson);
-        var res = responseJson
-        var res_token = res.token;
-        console.log(res_token)
-        console.log(res)
-      })
-
-      //If response is not in json then in error
-      .catch((error) => {
-        alert(JSON.stringify(error));
-        console.error(error);
-      });
-  }
+ 
 
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.logo}>Welcome</Text>
-        <View style={styles.inputView} >
+        {/* <View style={styles.inputView} >
           <TextInput
             style={styles.inputText}
             placeholder="Mobile Number"
@@ -111,8 +55,8 @@ export default  class App extends React.Component {
           // keyboardType={'numeric'}
           />
 
-        </View>
-        {/* <View style={styles.inputView} >
+        </View> */}
+        <View style={styles.inputView} >
           <TextInput
             secureTextEntry
             style={styles.inputText}
@@ -121,9 +65,8 @@ export default  class App extends React.Component {
             onChangeText={text => this.setState({ otp: text })}
             keyboardType={'numeric'}
           />
-        </View> */}
-        {/* <TouchableOpacity onPress={() => this.getDataUsingGet()} style={styles.loginBtn}> */}
-        <TouchableOpacity onPress={() =>{ this.getDataUsingGet() ;this.props.navigation.navigate('Login')}}  style={styles.loginBtn}>
+        </View>
+        <TouchableOpacity onPress={() => console.log("welcome")} style={styles.loginBtn}>
           {/* <TouchableOpacity onPress={() => navigation.navigate('SampleNav', text)} style={styles.loginBtn}> */}
 
           <Text style={styles.loginText}>LOGIN</Text>

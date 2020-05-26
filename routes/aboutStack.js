@@ -1,6 +1,8 @@
 //import About from '../screens/about';
 import About from '../screens/about';
 import React from 'react';
+import Login from '../screens/login';
+import { createAppContainer } from 'react-navigation';
 import Header from '../shared/header';
 import { createStackNavigator } from 'react-navigation-stack';
 const screens = {
@@ -8,10 +10,22 @@ const screens = {
       screen: About,
       navigationOptions: ({ navigation }) => {
         return {
-          headerTitle: () => <Header title='Sample App' navigation={navigation} />
+         // title:'login',
         }
       },
+      // navigationOptions:({ navigation })=>{}{
+      //   title:'login',
+      // },
     },
+    Login:
+{
+    screen: Login,
+    navigationOptions: {
+      title: 'otp',
+      //headerStyle: { backgroundColor: '#eee' }
+    }
+
+}
   }
 // const screens = {
 //   About: {
@@ -40,6 +54,7 @@ import { createStackNavigator } from 'react-navigation-stack';
   About: {
     screen: About,
     navigationOptions: ({ navigation }) => {
+
       return {
         headerTitle: () => <Header title='GameZone' navigation={navigation} />
       }
