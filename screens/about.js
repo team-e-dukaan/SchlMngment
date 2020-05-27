@@ -15,6 +15,7 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity, ActivityIndicator,
 import { createStackNavigator } from 'react-navigation-stack';
 export function About() {}
 export default  class App extends React.Component {
+   res;
    pressHandler = () => {
     //navigation.navigate('ReviewDetails');
     const {navigate}=this.props.navigation;
@@ -42,7 +43,7 @@ export default  class App extends React.Component {
         alert(JSON.stringify(responseJson));
         var res = responseJson
         console.log(res)
-
+        this.props.navigation.navigate('Login',res)
 
       })
 
@@ -87,8 +88,8 @@ export default  class App extends React.Component {
         // console.log(responseJson);
         var res = responseJson
         var res_token = res.token;
-        console.log(res_token)
-        console.log(res)
+       // console.log(res_token)
+       // console.log(res)
       })
 
       //If response is not in json then in error
@@ -123,7 +124,7 @@ export default  class App extends React.Component {
           />
         </View> */}
         {/* <TouchableOpacity onPress={() => this.getDataUsingGet()} style={styles.loginBtn}> */}
-        <TouchableOpacity onPress={() =>{ this.getDataUsingGet() ;this.props.navigation.navigate('Login')}}  style={styles.loginBtn}>
+        <TouchableOpacity onPress={() =>{ this.getDataUsingGet() }}  style={styles.loginBtn}>
           {/* <TouchableOpacity onPress={() => navigation.navigate('SampleNav', text)} style={styles.loginBtn}> */}
 
           <Text style={styles.loginText}>LOGIN</Text>
