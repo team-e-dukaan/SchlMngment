@@ -89,7 +89,9 @@ export default  class App extends React.Component {
     marginBottom: 10}}>
           {/* <TouchableOpacity onPress={() => navigation.navigate('SampleNav', text)} style={styles.loginBtn}> */}
 
-          <Text style={{color: "white",padding:80}} onPress={() =>{ console.log("eyy");this.getDataUsingGet(); }}>LOGIN</Text>
+          <Text style={{color: "white",padding:80}} onPress={() =>{ console.log("eyy"); this.props.navigation.navigate('Principal')}}>LOGIN</Text>
+          {/* <Text style={{color: "white",padding:80}} onPress={() =>{ console.log("eyy"); this.props.navigation.navigate('Student')}}>stud</Text>
+          <Text style={{color: "white",padding:80}} onPress={() =>{ console.log("eyy"); this.props.navigation.navigate('staff')}}>staff</Text> */}
         </TouchableOpacity>
         
           </View>
@@ -103,7 +105,8 @@ export default  class App extends React.Component {
         // }
          else {
           return (
-            <Text style={styles.logo1}> Improper mail or id </Text>
+             <Text style={styles.logo1}> Improper mail or id </Text>
+            
           )
         }
       })()}

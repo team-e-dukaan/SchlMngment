@@ -6,7 +6,9 @@ import { createDrawerNavigator } from 'react-navigation-drawer';
 //import AboutStack from './aboutStack';
 import HomeStack from './homeStack';
 import AboutStack from './aboutStack';
-
+import PrincipalStack from './principalStack';
+import StaffStack from './staffStack';
+import StudentStack from './studentStack';
 // drawer navigation options
 const RootDrawerNavigator = createDrawerNavigator({
   Home: {
@@ -15,6 +17,16 @@ const RootDrawerNavigator = createDrawerNavigator({
   About: {
     screen: AboutStack,
   },
+  Principal: {
+    screen: PrincipalStack,
+  },
+  Staff: {
+    screen: StaffStack,
+  },
+  Student: {
+    screen: StudentStack,
+  },
+
 });
 
 
