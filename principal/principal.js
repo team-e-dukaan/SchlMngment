@@ -14,11 +14,34 @@ export default function SampleNav({navigation}) {
     const pressHandler = () => {
         navigation.goBack();
       }
+     const fun=(item)=>
+      {
+        {(() => {
+          if (item.title=='Add student') {
+            return (
+            
+             navigation.navigate('Details')
+            //  <div>someCase</div>
+            )
+           }
+          else if (item.title=='Add Staff') {
+            return (
+              navigation.navigate('AddTeacher')
+            )
+          }
+           else {
+            return (
+              //  <Text style={styles.logo1}> Improper mail or id </Text>
+              console.log('other route')
+            )
+          }
+        })()}
+      }
     
   return (
     <View style={globalStyles.container}>
     <FlatList data={menu} renderItem={({ item }) => (
-      <TouchableOpacity onPress={() => navigation.navigate('Details')}>
+      <TouchableOpacity onPress={() => fun(item)}>
         <Card>
           <Text style={globalStyles.titleText}>{ item.title }</Text>
         </Card>

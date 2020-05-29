@@ -4,6 +4,7 @@ import React from 'react';
 import { createAppContainer } from 'react-navigation';
 import Header from '../shared/header';
 import Details from '../principal/Details';
+import AddTeacher from '../principal/addTeacher';
 import { createStackNavigator } from 'react-navigation-stack';
 const screens = {
    
@@ -39,6 +40,15 @@ const screens = {
           screen: Details,
           navigationOptions: {
             title: 'Details',
+            //headerStyle: { backgroundColor: '#eee' }
+          }
+      
+      },
+      AddTeacher:
+      {
+          screen: AddTeacher,
+          navigationOptions: {
+            title: 'AddStaff',
             //headerStyle: { backgroundColor: '#eee' }
           }
       
