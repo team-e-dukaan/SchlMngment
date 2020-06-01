@@ -1,5 +1,13 @@
 import Student from '../student/student';
-import Login from '../screens/login'
+import Login from '../screens/login';
+import Assignments from '../student/assignments';
+import Attendance from '../student/attendance';
+import Complaints from '../student/complaints';
+import Feedback from '../student/feedback';
+import FeeDetails from '../student/feeDetails';
+import Report from '../student/report';
+import Subjects from '../student/subjects';
+import Details from '../principal/Details';
 import React from 'react';
 import { createAppContainer } from 'react-navigation';
 import Header from '../shared/header';
@@ -25,8 +33,69 @@ const screens = {
         },
      
       },
-    
-  
+      Complaints:
+      {
+          screen: Complaints,
+          navigationOptions: {
+            title: 'Complaints',
+            //headerStyle: { backgroundColor: '#eee' }
+          }
+      
+      },
+      Attendance:
+      {
+          screen: Attendance,
+          navigationOptions: {
+            title: 'Attendance',
+            //headerStyle: { backgroundColor: '#eee' }
+          }
+      
+      },
+      Assignments:
+      {
+          screen: Assignments,
+          navigationOptions: {
+            title: 'Assignments',
+            //headerStyle: { backgroundColor: '#eee' }
+          }
+      
+      },
+      Feedback:
+      {
+          screen: Feedback,
+          navigationOptions: {
+            title: 'Feedback',
+            //headerStyle: { backgroundColor: '#eee' }
+          }
+      
+      },
+      FeeDetails:
+      {
+          screen: FeeDetails,
+          navigationOptions: {
+            title: 'Fee Details',
+            //headerStyle: { backgroundColor: '#eee' }
+          }
+      
+      },
+      Report:
+      {
+          screen: Report,
+          navigationOptions: {
+            title: 'Report',
+            //headerStyle: { backgroundColor: '#eee' }
+          }
+      
+      },
+      Subjects:
+      {
+          screen: Subjects,
+          navigationOptions: {
+            title: 'Subjects',
+            //headerStyle: { backgroundColor: '#eee' }
+          }
+      
+      },
   }
 
 

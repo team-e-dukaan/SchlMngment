@@ -5,6 +5,8 @@ import { createAppContainer } from 'react-navigation';
 import Header from '../shared/header';
 import Details from '../principal/Details';
 import AddTeacher from '../principal/addTeacher';
+import MoneyGenerated from '../principal/moneyGenerated';
+import MoneySpent from '../principal/moneySpent';
 import { createStackNavigator } from 'react-navigation-stack';
 const screens = {
    
@@ -49,6 +51,24 @@ const screens = {
           screen: AddTeacher,
           navigationOptions: {
             title: 'AddStaff',
+            //headerStyle: { backgroundColor: '#eee' }
+          }
+      
+      },
+      MoneyGenerated:
+      {
+          screen: MoneyGenerated,
+          navigationOptions: {
+            title: 'Money Generated',
+            //headerStyle: { backgroundColor: '#eee' }
+          }
+      
+      },
+      MoneySpent:
+      {
+          screen: MoneySpent,
+          navigationOptions: {
+            title: 'MoneySpent',
             //headerStyle: { backgroundColor: '#eee' }
           }
       

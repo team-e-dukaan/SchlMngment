@@ -8,7 +8,8 @@ export default function SampleNav({navigation}) {
     const [menu, setMenu] = useState([
         { title: 'Add student',  key: '1' },
         { title: 'Add Staff', key: '2' },
-        { title: 'Money', key: '3' },
+        { title: 'Money Generated', key: '3' },
+        { title: 'Money Spent', key: '4' },
       ]);
     
     const pressHandler = () => {
@@ -27,6 +28,16 @@ export default function SampleNav({navigation}) {
           else if (item.title=='Add Staff') {
             return (
               navigation.navigate('AddTeacher')
+            )
+          }
+          else if (item.title=='Money Generated') {
+            return (
+              navigation.navigate('MoneyGenerated')
+            )
+          }
+          else if (item.title=='Money Spent') {
+            return (
+              navigation.navigate('MoneySpent')
             )
           }
            else {
