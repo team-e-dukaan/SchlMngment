@@ -9,8 +9,9 @@ const screens = {
     About: {
       screen: About,
       navigationOptions: ({ navigation }) => {
-        return {
-         // title:'login',
+        return { 
+          // title:'home',
+          headerTitle: () => <Header title='Sample App' navigation={navigation} />
         }
       },
       // navigationOptions:({ navigation })=>{}{
