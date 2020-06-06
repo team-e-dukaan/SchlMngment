@@ -11,15 +11,20 @@ import StaffStack from './staffStack';
 import StudentStack from './studentStack';
 // drawer navigation options
 const RootDrawerNavigator = createDrawerNavigator({
-  // Home: {
-  //   screen: HomeStack,
-  // },
-  About: {
-    screen: AboutStack,
+  Home: {
+    screen: HomeStack,
   },
   Principal: {
     screen: PrincipalStack,
   },
+  About: {
+    screen: AboutStack,
+  },
+  
+  // Home: {
+  //   screen: HomeStack,
+  // },
+ 
   Staff: {
     screen: StaffStack,
   },
