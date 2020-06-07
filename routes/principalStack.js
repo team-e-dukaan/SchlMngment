@@ -1,6 +1,7 @@
 import Principal from '../principal/principal';
 import Login from '../screens/login'
 import React from 'react';
+// import Home from '../screens/home';
 import { createAppContainer } from 'react-navigation';
 import Header from '../shared/header';
 import Details from '../principal/Details';
@@ -9,7 +10,14 @@ import MoneyGenerated from '../principal/moneyGenerated';
 import MoneySpent from '../principal/moneySpent';
 import { createStackNavigator } from 'react-navigation-stack';
 const screens = {
-   
+//  Home: {
+//   screen: Home,
+//   navigationOptions: ({ navigation }) => {
+//     return {
+//       headerTitle: () => <Header title='Sample App' navigation={navigation} />
+//     }
+//   },
+// },
     Principal: {
         screen: Principal,
         navigationOptions: ({ navigation }) => {
@@ -23,12 +31,12 @@ const screens = {
         // },
       },
     
-    Login: {
+      Login: {
         screen: Login,
         navigationOptions: ({ navigation }) => {
           return {
            // title:'login',
-  
+    
           }
         },
         // navigationOptions:({ navigation })=>{}{

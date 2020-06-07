@@ -1,5 +1,5 @@
 import { StyleSheet, View, Text,Button,TouchableOpacity, FlatList  } from 'react-native';
-
+import { createStackNavigator } from 'react-navigation-stack';
 import {globalStyles} from '../styles/global';
 import React,{useState} from 'react'; 
 import Card from '../shared/card';
@@ -11,7 +11,9 @@ export default function SampleNav({navigation}) {
         { title: 'Money Generated', key: '3' },
         { title: 'Money Spent', key: '4' },
       ]);
-    
+      
+  //    const { userName, userRole } = params ? params: null;
+  //const [ss, setSS]=useState([{navigation.getParam(data)}])
     const pressHandler = () => {
         navigation.goBack();
       }
@@ -50,17 +52,35 @@ export default function SampleNav({navigation}) {
       }
     
   return (
+   // const { title, body } = params ? params: null;
     <View style={globalStyles.container}>
+      
+           <Text>
+             {/* { navigation.getParam('name') } */}
+             {/* itemId: {JSON.stringify(navigation.getParam('item', 'NO-ID'))} */}
+             {/* {navigation.getParam('item')} */}
+            {/* {userName} res.data.jwString*/}
+            {/* {navigation.getParam('jwString')} */}
+            {/* {navigation.getParam('data').getParam('jwString')} */}
+            {navigation.getParam('data').jwString}
+            {navigation.getParam('data').userName}
+            {/* {navigation.state.params} */}
+           </Text>
     <FlatList data={menu} renderItem={({ item }) => (
       <TouchableOpacity onPress={() => fun(item)}>
         <Card>
           <Text style={globalStyles.titleText}>{ item.title }</Text>
+          {/* <Text>{navigation.getParam('data') }</Text> */}
         </Card>
+        <Text></Text>
+      
       </TouchableOpacity>
     )} />
     <View style={styles.bott}>
       <Button title='sample nav'
-      onPress={() => navigation.navigate('Details')} />
+      // onPress={() => {console.log(navigation.getparam('jwString'))}} />
+      onPress={() => {console.log('ki')}} />
+      
       </View>
   </View>
 

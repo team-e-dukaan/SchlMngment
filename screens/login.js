@@ -295,7 +295,8 @@ jwtToken(token) {
   };
 
   setToken(token);
-  getToken().then(token => console.log(token)); // output '#your_secret_token'
+  //getToken().then();
+   getToken().then(token => console.log(token)); // output '#your_secret_token'
   return token
 }
 test(token) {
@@ -317,8 +318,8 @@ test(token) {
 
       alert(JSON.stringify(responseJson));
       var res = responseJson
-      console.log(res)
-      this.props.navigation.navigate('Home', res)
+     // console.log(res)
+     // this.props.navigation.navigate('Home', res)
 
     })
 
@@ -427,13 +428,16 @@ test(token) {
           this.setState = { isLoading: false, }
 
           this.jwtToken(token)
-          this.test(token)
-          this.props.navigation.navigate('Principal', res, token)
-
+          //this.test(token)
+console.log(res);
+console.log(res.data.jwString);
+        // params: { sport: x },  this.props.navigation.navigate('Principal', res)
+        var item=1;
+        this.props.navigation.navigate('Principal',res );
         }
       })
   }
-
+ 
   render() {
     return (
       <View style={styles.container}>
@@ -444,7 +448,7 @@ test(token) {
               // this.fun()
               <View>
                 <Text style={styles.logo}>Welcome</Text>
-                {/* <Text>{ this.props.navigation.getParam('status') }</Text> */}
+                <Text>{ this.props.navigation.getParam('userName') }</Text>
                 <View style={styles.inputView} >
                   <TextInput
                     secureTextEntry
@@ -485,7 +489,9 @@ test(token) {
           else {
             return (
               <Text style={styles.logo1}> Improper mail or id </Text>
-
+              //
+              
+            //  this.props.navigation.navigate('Principal', res)
             )
           }
         })()}
