@@ -18,6 +18,19 @@ const screens = {
 //     }
 //   },
 // },
+
+Login: {
+  screen: Login,
+  navigationOptions: ({ navigation }) => {
+    return {
+     // title:'login',
+
+    }
+  },
+  // navigationOptions:({ navigation })=>{}{
+  //   title:'login',
+  // },
+},
     Principal: {
         screen: Principal,
         navigationOptions: ({ navigation }) => {
@@ -31,38 +44,42 @@ const screens = {
         // },
       },
     
-      Login: {
-        screen: Login,
-        navigationOptions: ({ navigation }) => {
-          return {
-           // title:'login',
-    
-          }
-        },
-        // navigationOptions:({ navigation })=>{}{
-        //   title:'login',
-        // },
-      },
     
   
-      Details:
-      {
-          screen: Details,
-          navigationOptions: {
-            title: 'Details',
-            //headerStyle: { backgroundColor: '#eee' }
-          }
+      // AddTeacher:
+      // {
+      //     screen: AddTeacher,
+      //     navigationOptions: {
+      //       title: 'AddStaff',
+      //       //headerStyle: { backgroundColor: '#eee' }
+      //     }
       
-      },
+      // },
       AddTeacher:
-      {
-          screen: AddTeacher,
-          navigationOptions: {
-            title: 'AddStaff',
-            //headerStyle: { backgroundColor: '#eee' }
-          }
-      
-      },
+{
+    screen: AddTeacher,
+    // navigationOptions: {
+    //   title: 'AddStaff',
+    //   //headerStyle: { backgroundColor: '#eee' }
+    // }
+    navigationOptions: ({ navigation }) => {
+      return {
+       // title:'login',
+       title: 'AddStaff',
+      }
+    },
+},
+
+Details:
+{
+    screen: Details,
+    navigationOptions:({navigation})=> {
+      return{
+      title: 'Details',
+      //headerStyle: { backgroundColor: '#eee' }
+    }
+  },
+},
       MoneyGenerated:
       {
           screen: MoneyGenerated,

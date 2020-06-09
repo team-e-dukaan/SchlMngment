@@ -5,6 +5,8 @@ import React,{useState} from 'react';
 import Card from '../shared/card';
 import Details from '../principal/Details'
 export default function SampleNav({navigation}) {
+  const j=   navigation.getParam('data').jwString;
+// const j=7;
     const [menu, setMenu] = useState([
         { title: 'Add student',  key: '1' },
         { title: 'Add Staff', key: '2' },
@@ -23,13 +25,13 @@ export default function SampleNav({navigation}) {
           if (item.title=='Add student') {
             return (
             
-             navigation.navigate('Details')
+             navigation.navigate('Details',j)
             //  <div>someCase</div>
             )
            }
           else if (item.title=='Add Staff') {
             return (
-              navigation.navigate('AddTeacher')
+              navigation.navigate('AddTeacher',j)
             )
           }
           else if (item.title=='Money Generated') {
@@ -52,6 +54,8 @@ export default function SampleNav({navigation}) {
       }
     
   return (
+
+   
    // const { title, body } = params ? params: null;
     <View style={globalStyles.container}>
       
@@ -62,8 +66,8 @@ export default function SampleNav({navigation}) {
             {/* {userName} res.data.jwString*/}
             {/* {navigation.getParam('jwString')} */}
             {/* {navigation.getParam('data').getParam('jwString')} */}
-            {navigation.getParam('data').jwString}
-            {navigation.getParam('data').userName}
+            {/* {navigation.getParam('data').jwString}
+            {navigation.getParam('data').userName} */}
             {/* {navigation.state.params} */}
            </Text>
     <FlatList data={menu} renderItem={({ item }) => (
@@ -76,12 +80,12 @@ export default function SampleNav({navigation}) {
       
       </TouchableOpacity>
     )} />
-    <View style={styles.bott}>
+    {/* <View style={styles.bott}>
       <Button title='sample nav'
       // onPress={() => {console.log(navigation.getparam('jwString'))}} />
       onPress={() => {console.log('ki')}} />
       
-      </View>
+      </View> */}
   </View>
 
     // <View style={globalStyles.container}>

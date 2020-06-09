@@ -3,6 +3,8 @@ import About from '../screens/about';
 import React from 'react';
 import Login from '../screens/login';
 import Home from '../screens/home';
+import Details from '../principal/Details';
+//import AddTeacher from '../principal/addTeacher';
 // import Principal from '../principal/principal';
 import Principal from '../principal/principal'
 import { createAppContainer } from 'react-navigation';
@@ -61,7 +63,30 @@ Principal: {
   //   title:'login',
   // },
 },
-
+AddTeacher:
+{
+    screen: AddTeacher,
+    // navigationOptions: {
+    //   title: 'AddStaff',
+    //   //headerStyle: { backgroundColor: '#eee' }
+    // }
+    navigationOptions: ({ navigation }) => {
+      return {
+       // title:'login',
+       title: 'AddStaff',
+      }
+    },
+},
+Details:
+{
+    screen: Details,
+    navigationOptions:({navigation})=> {
+      return{
+      title: 'Details',
+      //headerStyle: { backgroundColor: '#eee' }
+    }
+  },
+},
   }
 // const screens = {
 //   About: {
