@@ -4,9 +4,11 @@ import React from 'react';
 import Login from '../screens/login';
 import Home from '../screens/home';
 import Details from '../principal/Details';
+import MoneySpent from '../principal/moneySpent';
 //import AddTeacher from '../principal/addTeacher';
 // import Principal from '../principal/principal';
-import Principal from '../principal/principal'
+import Principal from '../principal/principal';
+import MoneyGenerated from '../principal/moneyGenerated';
 import { createAppContainer } from 'react-navigation';
 import AddTeacher from '../principal/addTeacher';
 import Header from '../shared/header';
@@ -83,6 +85,26 @@ Details:
     navigationOptions:({navigation})=> {
       return{
       title: 'Details',
+      //headerStyle: { backgroundColor: '#eee' }
+    }
+  },
+},
+MoneyGenerated:
+{
+    screen: MoneyGenerated,
+    navigationOptions: ({navigation})=>{
+      return{
+      title: 'Money Generated',
+      //headerStyle: { backgroundColor: '#eee' }
+    }
+  },
+},
+MoneySpent:
+{
+    screen: MoneySpent,
+    navigationOptions: ({navigation})=>{
+      return{
+      title: 'Money Spent',
       //headerStyle: { backgroundColor: '#eee' }
     }
   },

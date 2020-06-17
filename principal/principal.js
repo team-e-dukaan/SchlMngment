@@ -36,12 +36,12 @@ export default function SampleNav({navigation}) {
           }
           else if (item.title=='Money Generated') {
             return (
-              navigation.navigate('MoneyGenerated')
+              navigation.navigate('MoneyGenerated',j)
             )
           }
           else if (item.title=='Money Spent') {
             return (
-              navigation.navigate('MoneySpent')
+              navigation.navigate('MoneySpent',j)
             )
           }
            else {

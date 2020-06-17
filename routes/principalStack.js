@@ -89,15 +89,25 @@ Details:
           }
       
       },
-      MoneySpent:
-      {
-          screen: MoneySpent,
-          navigationOptions: {
-            title: 'MoneySpent',
-            //headerStyle: { backgroundColor: '#eee' }
-          }
+      // MoneySpent:
+      // {
+      //     screen: MoneySpent,
+      //     navigationOptions: {
+      //       title: 'MoneySpent',
+      //       //headerStyle: { backgroundColor: '#eee' }
+      //     }
       
-      },
+      //},
+      MoneySpent:
+{
+    screen: MoneySpent,
+    navigationOptions: ({navigation})=>{
+      return{
+      title: 'Money Spent',
+      //headerStyle: { backgroundColor: '#eee' }
+    }
+  },
+},
   }
 
 

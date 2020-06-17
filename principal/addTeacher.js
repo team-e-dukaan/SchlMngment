@@ -7,6 +7,7 @@ import { Formik } from 'formik';
 //import React from 'react';
 import React, { useState } from 'react';
 import * as yup from 'yup';
+import Card from '../shared/card';
 console.disableYellowBox = true;
 const reviewSchema = yup.object({
   fname: yup.string()
@@ -272,6 +273,11 @@ console.log(res);
          
                  
          console.log(res);
+            // <Button color='maroon' title="View" onPress={  this.props.navigation.navigate('moneyGenertaed',res)} />  
+       //  this.props.navigation.navigate('moneyGenertaed',res)
+        //  this.props.navigation.navigate('moneyGenertaed',res);
+        //  <Card><Text>hello</Text></Card>
+// {/* <Card><Text>{res.firstName}</Text></Card> */}
          //console.log(res.data.jwString);
                  // params: { sport: x },  this.props.navigation.navigate('Principal', res)
                  //var item=1;
@@ -391,6 +397,7 @@ console.log(res);
             />   
             <Text style={globalStyles.errorText}>{props.touched.department && props.errors.department}</Text>    
             <Button color='maroon' title="Submit" onPress={props.handleSubmit} /> 
+            {/* <Button color='maroon' title="View" onPress={  this.props.navigation.navigate('moneyGenertaed',res)} />  */}
           </View>
         )} 
       </Formik>
