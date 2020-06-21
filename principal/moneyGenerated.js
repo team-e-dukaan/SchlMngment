@@ -3,6 +3,7 @@ import { globalStyles } from '../styles/global';
 import React,{useState} from 'react';
 import {Component} from 'react';
 import Card from '../shared/card';
+import ReactTable from "react-table"; 
 export  function moneyGenerated({navigation}) {
   // res
     const pressHandler = () => {
@@ -39,10 +40,12 @@ export  function moneyGenerated({navigation}) {
   );
 }
 export default  class App extends React.Component {
+  //var x
   constructor(props) {
     super(props);
     this.state = {
       res:"",
+      data1:[],
       // brand: "Ford",
       // model: "Mustang",
       // color: "red",
@@ -59,7 +62,7 @@ export default  class App extends React.Component {
   //    email: '',
   //    otp: ""
   //  }
-   
+   componentDidMount=()=>{}
    getDataUsingGet() {
      console.log(this.props.navigation.state.params);
     var s='Bearer '+this.props.navigation.state.params;
@@ -83,14 +86,18 @@ export default  class App extends React.Component {
        .then((responseJson) => {
   
       //   alert(JSON.stringify(responseJson));
-        //  var res = responseJson
-        //  console.log(res)
+         // var res1 = responseJson
+        // console.log(res1)
         //  console.log(res.data[0].userName)
         //  console.log(res.data[1].userName)
         // this.props.navigation.navigate('Login',res)
-        this.setState({res: responseJson});
+
+         this.setState({res: responseJson});
         console.log(this.state.res)
         console.log(this.state.res.data[1].userName)
+         this.setState({data1: this.state.res.data});
+        console.log(this.state.data1[1].userName)
+       
        })
   
   
@@ -101,11 +108,41 @@ export default  class App extends React.Component {
          console.error(error);
        });
      //Alert.alert('You are redirected to register page! Please Wait')
-  
+  <Text> trial</Text>
      // verifyOTP
    }
-  
+   
    render() {
+   
+    //console.log(this.state.items[0].name);
+  
+
+        const data = [{  
+        name: 'Ayaan',  
+        age: 26  
+        },{  
+         name: 'Ahana',  
+         age: 22  
+         },{  
+         name: 'Peter',  
+         age: 40      
+         },{  
+         name: 'Virat',  
+         age: 30  
+         },{  
+         name: 'Rohit',  
+         age: 32  
+         },{  
+         name: 'Dhoni',  
+         age: 37  
+         }]  
+     const columns = [{  
+       Header: 'Name',  
+       accessor: 'name'  
+       },{  
+       Header: 'Age',  
+       accessor: 'age'  
+       }]   
    // console.log('hii')
   //  console.log(this.props.navigation.state.params);
   //  var s='Bearer '+this.props.navigation.state.params;
@@ -153,13 +190,26 @@ export default  class App extends React.Component {
      return (
       // console.log('hii')
        <View>
+
          <Text>hii</Text>
-   
-      <Button color='maroon' title="Submit" onPress={this.getDataUsingGet()} /> 
-      <Text>{this.state.res.status}</Text>
-      <Text>{this.state.res.data[0].userName}</Text>
+  
+    <Button color='maroon' title="Submit" onPress={() => {this.getDataUsingGet() }}  /> 
+      {/* <Button color='maroon' title="Submit" onPress={this.getDataUsingGet()} />  */}
+      {/* <Text>{this.state.res.status}</Text> onClick={() => { this.props.removeTaskFunction(todo) }} */}
+{/*      
+      if(this.state.res.data.length)*/}
+    {/* <Text>{this.state.res.data[1}</Text>  */}
+      <Text>{this.state.data1[1]['userName']}</Text>
+      <Text>hii</Text>
      {/* <Text>{res.status}</Text> */}
-    
+  
+     {/* <ReactTable  
+                  data={data}  
+                  columns={columns}  
+                  defaultPageSize = {2}  
+                  pageSizeOptions = {[2,4, 6]}  
+              />   */}
+   
   </View>
      );
    }
