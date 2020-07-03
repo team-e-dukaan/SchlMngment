@@ -13,11 +13,12 @@ import { createAppContainer } from 'react-navigation';
 import AddTeacher from '../principal/addTeacher';
 import Header from '../shared/header';
 import { createStackNavigator } from 'react-navigation-stack';
+import Student from '../student/student';
 const screens = {
     About: {
       screen: About,
       navigationOptions: ({ navigation }) => {
-        return { 
+        return {  
           // title:'home',
           headerTitle: () => <Header title='Sample App' navigation={navigation} />
         }
@@ -53,6 +54,16 @@ Login:
 //     }
 
 // },
+Student: {
+  screen: Student,
+  navigationOptions: ({ navigation }) => {
+    return {
+     // title:'login',
+
+    }
+  },
+
+},
 Principal: {
   screen: Principal,
   navigationOptions: ({ navigation }) => {

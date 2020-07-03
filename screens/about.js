@@ -27,8 +27,9 @@ export default  class App extends React.Component {
   }
   
   getDataUsingGet() {
+  // http://ec2-15-206-74-22.ap-south-1.compute.amazonaws.com:8080/swrmsdc
     var emailId = this.state.email
-    var url = "http://ec2-52-12-91-65.us-west-2.compute.amazonaws.com:8080/swrmsdc/authentication/sendOTP?emailId=";
+    var url = "http://ec2-15-206-74-22.ap-south-1.compute.amazonaws.com:8080/swrmsdc/authentication/sendOTP?emailId=";
     var url2 = url.concat(emailId);
     fetch(url2, {
       method: 'GET',

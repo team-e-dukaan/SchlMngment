@@ -398,7 +398,7 @@ test(token) {
     //     }
     //   })
     var password = this.state.otp
-    var url = "http://ec2-52-12-91-65.us-west-2.compute.amazonaws.com:8080/swrmsdc/authentication/verifyOTP";
+    var url = "http://ec2-15-206-74-22.ap-south-1.compute.amazonaws.com:8080/swrmsdc/authentication/verifyOTP";
 
     var user = this.props.navigation.getParam('userName')
     const requestBody = { userName: user, password: password }
@@ -430,10 +430,10 @@ test(token) {
           this.jwtToken(token)
           //this.test(token)
 console.log(res);
-console.log(res.data.jwString);
+//console.log(res.data.jwString);
         // params: { sport: x },  this.props.navigation.navigate('Principal', res)
         var item=1;
-        this.props.navigation.navigate('Principal',res );
+        this.props.navigation.navigate('Student',res );
         }
       })
   }

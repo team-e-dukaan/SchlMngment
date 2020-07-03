@@ -199,7 +199,7 @@ export default  class App extends React.Component {
 {/*      
       if(this.state.res.data.length)*/}
     {/* <Text>{this.state.res.data[1}</Text>  */}
-      <Text>{this.state.data1[1]['userName']}</Text>
+      <Text>{this.state.data1[1]['staffId']}</Text>
       <Text>hii</Text>
      {/* <Text>{res.status}</Text> */}
   
